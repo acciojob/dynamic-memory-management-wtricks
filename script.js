@@ -28,7 +28,11 @@ const updateMemoryUsage = () => {
 	if (window.performance && window.performance.memory) {
 	  const memoryInfo = window.performance.memory; 
 
-		document.getElementById("memory").textContent = `Memory usage: ${memoryInfo.usedJSHeapSize / (1024 * 1024) + " MB"} / ${memoryInfo.totalJSHeapSize / (1024 * 1024) + " MB"}`
+		document.getElementById("memory").textContent = `Memory usage: ${
+			Math.floor(memoryInfo.usedJSHeapSize / (1024 * 1024)) + " MB"
+		} / ${
+			Math.floor(memoryInfo.totalJSHeapSize / (1024 * 1024)) + " MB"
+		}`
 	}
 };
 
